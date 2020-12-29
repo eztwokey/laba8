@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-# Вариант 6 
 # Использовать словарь, содержащий следующие ключи: название пункта назначения; номер
 # поезда; время отправления. Написать программу, выполняющую следующие действия:
 # ввод с клавиатуры данных в список, состоящий из словарей заданной структуры; записи должны
@@ -33,7 +32,7 @@ if __name__ == '__main__':
 
             trains.append(train)
             if len(trains) > 1:
-                trains.sort(key=lambda item: item.get('name', ''))
+                trains.sort(key=lambda item: item.get('num', ''))
 
         elif command == 'list':
             line = '+-{}-+-{}-+-{}-+-{}-+'.format(
@@ -59,7 +58,7 @@ if __name__ == '__main__':
                         idx,
                         train.get('name', ''),
                         train.get('num', ''),
-                        train.get('time', 0)
+                        train.get('time', '')
                     )
                 )
 
@@ -75,7 +74,7 @@ if __name__ == '__main__':
             for train in trains:
                 if train.get('num') == number:
                     count += 1
-                    print('Номер поезда:', train.get('num', ''))
+                    print('Номер поезда:', train.get('num', '0'))
                     print('Пункт назначения:', train.get('name', ''))
                     print('Время отправления:', train.get('time', ''))
 
